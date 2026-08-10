@@ -10,16 +10,19 @@
 :root {
   color-scheme: light dark;
 
-  /* Claro: cremas cálidas, sin blanco puro en ninguna capa. El lienzo es el
+  /* Claro: marfil cálido, sin blanco puro en ninguna capa. El lienzo es el
      tono medio y las tarjetas suben hacia el blanco roto, de forma que un
      recuadro se separa del fondo por su propia luz y no por una sombra.
-     Oscuro: los mismos tokens que la app (`Kipu_app/app/globals.css`). */
-  --background: light-dark(#f5f4ef, #1f1e1d);
-  --card: light-dark(#fbfaf6, #262624);
+     Oscuro: los mismos tokens que la app (`Kipu_app/app/globals.css`).
+
+     El fondo de YC (#f5f5ee) es casi el mismo gris cálido del que veníamos;
+     este baja un escalón hacia el marfil para que la crema se note. */
+  --background: light-dark(#f0eee6, #1f1e1d);
+  --card: light-dark(#f7f5ee, #262624);
   --foreground: light-dark(#1f1e1d, #f5f4ef);
   --foreground-soft: light-dark(#4a4842, #c2c0b6);
-  --muted: light-dark(#6b6a63, #8f8d85);
-  --border: light-dark(#e3e0d6, #383734);
+  --muted: light-dark(#67665f, #8f8d85);
+  --border: light-dark(#e2ded0, #383734);
 
   /* El verde azulado de marca (#58bfcb) sobre crema da 2.9:1: vale como
      adorno y no como texto. En claro, lo que lleva texto usa la versión
@@ -31,7 +34,7 @@
   /* Cuerdas y nudos del quipu. Sobre crema hay que subir la opacidad o el
      dibujo desaparece, de ahí que cada tema lleve su propio alfa. */
   --quipu-cuerda: light-dark(rgb(31 30 29 / 0.24), rgb(245 244 239 / 0.16));
-  --quipu-nudo: light-dark(rgb(107 106 99 / 0.5), rgb(143 141 133 / 0.45));
+  --quipu-nudo: light-dark(rgb(103 102 95 / 0.5), rgb(143 141 133 / 0.45));
   --quipu-halo: light-dark(rgb(8 159 172 / 0.1), rgb(88 191 203 / 0.14));
 }
 

@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
+
+  // El botón flotante de Next en la esquina. Solo sale en desarrollo —nunca
+  // formó parte del sitio publicado—, pero estorba para mirar el diseño.
+  devIndicators: false,
 };
 
 export default nextConfig;
