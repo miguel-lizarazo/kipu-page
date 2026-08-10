@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Los tokens son los mismos que los de la app (`Kipu_app/app/globals.css`).
+   Si cambian allí, cambian aquí: la página y el producto tienen que leerse
+   como la misma marca. Lo que se añade abajo es solo lo que una landing
+   necesita y una aplicación no. */
+:root {
+  --background: #1f1e1d;
+  --foreground: #f5f4ef;
+  --muted: #8f8d85;
+  --card: #262624;
+  --border: #383734;
+  --primary: #58bfcb;
+
+  /* Verde azulado más profundo, el del texto de bienvenida de la app. Sirve
+     para rellenos grandes, donde --primary a pantalla completa deslumbra. */
+  --primary-deep: #089fac;
+  --foreground-soft: #c2c0b6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-soft: var(--foreground-soft);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* El foco por defecto de Chrome se pierde sobre el fondo oscuro. */
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
