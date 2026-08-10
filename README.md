@@ -68,12 +68,27 @@ si falta en alguno, TypeScript lo dice.
 
 ## Publicar
 
+Cada push a `main` dispara `.github/workflows/deploy.yml`, que pasa el lint,
+compila y sube `out/` a GitHub Pages. No hay que hacer nada a mano.
+
+Para compilar en local:
+
 ```bash
 npm run build
 ```
 
-Deja el sitio estático en `out/`, listo para GitHub Pages, Netlify o cualquier
-servidor de archivos. No hay backend ni variables de entorno.
+El sitio queda en `out/`: HTML plano, sin backend ni variables de entorno.
+
+### Dominio
+
+`kiputech.org`, registrado en Squarespace. El dominio vive en `public/CNAME`,
+que Next copia a `out/` en cada build: así sobrevive a los despliegues y no
+depende de un ajuste guardado solo en la interfaz de GitHub.
+
+En el DNS de Squarespace, el vértice apunta a las cuatro IP de GitHub Pages
+(`185.199.108-111.153`) y `www` es un CNAME a `miguel-lizarazo.github.io`.
+Squarespace tiende a reponer sus propios registros si el dominio sigue
+conectado a un sitio suyo; hay que desconectarlo primero.
 
 ## Pendiente
 
