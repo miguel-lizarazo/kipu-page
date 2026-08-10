@@ -97,7 +97,8 @@ const es: Diccionario = {
   },
 
   pie: {
-    lema: "Opensource para Estados de Latinoamérica y el Caribe",
+    // Igual que los títulos de inicio: en inglés en los tres idiomas.
+    lema: "Open Govtech for Latin America and the Caribbean",
     company: "Empresa",
     contacto: "Contacto",
     derechos: "© 2026 Kipu Technologies",
@@ -151,7 +152,7 @@ const en: Diccionario = {
   },
 
   pie: {
-    lema: "Open source for the states of Latin America and the Caribbean",
+    lema: "Open Govtech for Latin America and the Caribbean",
     company: "Company",
     contacto: "Contact",
     derechos: "© 2026 Kipu Technologies",
@@ -206,7 +207,7 @@ const pt: Diccionario = {
   },
 
   pie: {
-    lema: "Código aberto para os Estados da América Latina e do Caribe",
+    lema: "Open Govtech for Latin America and the Caribbean",
     company: "Empresa",
     contacto: "Contato",
     derechos: "© 2026 Kipu Technologies",
