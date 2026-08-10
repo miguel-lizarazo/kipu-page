@@ -29,10 +29,25 @@ export type Diccionario = {
   temaAOscuro: string;
   nav: { about: string; resources: string };
   hero: { eyebrow: string; titulo: string; entradilla: string };
+  inicio: {
+    // Los dos títulos van en inglés en los tres idiomas, por decisión de
+    // marca. Están igual en los tres diccionarios para que traducirlos, si
+    // algún día se quiere, sea editar aquí y nada más.
+    releases: { titulo: string; texto: string };
+    colaborar: { titulo: string; texto: string };
+  };
   enConstruccion: {
     etiqueta: string;
     about: { titulo: string; texto: string };
     resources: { titulo: string; texto: string };
+  };
+  pie: {
+    lema: string;
+    company: string;
+    contacto: string;
+    derechos: string;
+    linkedin: string;
+    correo: string;
   };
 };
 
@@ -55,6 +70,18 @@ const es: Diccionario = {
       "Un kipu registraba, en cuerdas anudadas, lo que un Estado necesitaba recordar. Este también: instrumentos abiertos para que los equipos de gobierno sigan sus planes, midan sus avances y conserven sus datos.",
   },
 
+  inicio: {
+    releases: {
+      titulo: "Latest releases",
+      texto: "Aquí irá cada versión publicada, con su fecha y sus notas.",
+    },
+    colaborar: {
+      titulo: "Building? Let's collaborate",
+      texto:
+        "Aquí irán las formas de sumarse: qué hace falta y por dónde entrar.",
+    },
+  },
+
   enConstruccion: {
     etiqueta: "En construcción",
     about: {
@@ -67,6 +94,15 @@ const es: Diccionario = {
       texto:
         "El catálogo de herramientas y su documentación. Todavía se ordena.",
     },
+  },
+
+  pie: {
+    lema: "Opensource para Estados de Latinoamérica y el Caribe",
+    company: "Empresa",
+    contacto: "Contacto",
+    derechos: "© 2026 Kipu Technologies",
+    linkedin: "LinkedIn",
+    correo: "Correo electrónico",
   },
 };
 
@@ -89,6 +125,17 @@ const en: Diccionario = {
       "A quipu recorded, in knotted cords, what a state needed to remember. So does this one: open instruments for government teams to follow their plans, measure their progress and keep their own data.",
   },
 
+  inicio: {
+    releases: {
+      titulo: "Latest releases",
+      texto: "Each published version will land here, with its date and notes.",
+    },
+    colaborar: {
+      titulo: "Building? Let's collaborate",
+      texto: "The ways to join in will land here: what is needed and where to start.",
+    },
+  },
+
   enConstruccion: {
     etiqueta: "Under construction",
     about: {
@@ -101,6 +148,15 @@ const en: Diccionario = {
       texto:
         "The catalogue of tools and their documentation. Still being sorted out.",
     },
+  },
+
+  pie: {
+    lema: "Open source for the states of Latin America and the Caribbean",
+    company: "Company",
+    contacto: "Contact",
+    derechos: "© 2026 Kipu Technologies",
+    linkedin: "LinkedIn",
+    correo: "Email",
   },
 };
 
@@ -123,6 +179,18 @@ const pt: Diccionario = {
       "Um quipu registrava, em cordas com nós, o que um Estado precisava lembrar. Este também: instrumentos abertos para que as equipes de governo acompanhem seus planos, meçam seus avanços e guardem seus próprios dados.",
   },
 
+  inicio: {
+    releases: {
+      titulo: "Latest releases",
+      texto: "Aqui virá cada versão publicada, com sua data e suas notas.",
+    },
+    colaborar: {
+      titulo: "Building? Let's collaborate",
+      texto:
+        "Aqui virão as formas de participar: o que falta e por onde começar.",
+    },
+  },
+
   enConstruccion: {
     etiqueta: "Em construção",
     about: {
@@ -135,6 +203,15 @@ const pt: Diccionario = {
       texto:
         "O catálogo de ferramentas e sua documentação. Ainda está sendo organizado.",
     },
+  },
+
+  pie: {
+    lema: "Código aberto para os Estados da América Latina e do Caribe",
+    company: "Empresa",
+    contacto: "Contato",
+    derechos: "© 2026 Kipu Technologies",
+    linkedin: "LinkedIn",
+    correo: "E-mail",
   },
 };
 
