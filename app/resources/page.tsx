@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { EnConstruccion } from "@/components/ui/en-construccion";
-import { enConstruccion, sitio } from "@/content/site";
+import { DICCIONARIOS, RUTAS, sitio } from "@/content/site";
+import { IDIOMA_POR_DEFECTO } from "@/lib/i18n/idiomas";
+
+const porDefecto = DICCIONARIOS[IDIOMA_POR_DEFECTO].enConstruccion.resources;
 
 export const metadata: Metadata = {
-  title: `Resources · ${sitio.nombre}`,
-  description: enConstruccion.resources.texto,
+  title: `${porDefecto.titulo} · ${sitio.nombre}`,
+  description: porDefecto.texto,
 };
 
 export default function Resources() {
   return (
     <>
-      <SiteHeader activa="/resources/" />
+      <SiteHeader activa={RUTAS.resources} />
       <main>
-        <EnConstruccion
-          titulo={enConstruccion.resources.titulo}
-          texto={enConstruccion.resources.texto}
-        />
+        <EnConstruccion seccion="resources" />
       </main>
     </>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useT } from "@/components/i18n/language-provider";
 import { cn } from "@/lib/utils";
 
 /**
@@ -25,6 +28,8 @@ export function KipuLogo({
   conNombre = true,
   priority = false,
 }: KipuLogoProps) {
+  const t = useT();
+
   const marca = (
     <span className="inline-flex items-center gap-3">
       <Image
@@ -51,7 +56,7 @@ export function KipuLogo({
   return (
     <Link
       href={href}
-      aria-label="Kipu, ir al inicio"
+      aria-label={t.irAlInicio}
       className={cn("inline-flex items-center", className)}
     >
       {marca}

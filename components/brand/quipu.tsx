@@ -98,20 +98,18 @@ export function Quipu({ className }: { className?: string }) {
       <g mask="url(#kipu-mascara)">
         {COLGANTES.map((c) => {
           const curva = colgante(enCubica(CUERDA, c.t), c.largo, c.deriva);
-          // Las opacidades son variables CSS porque cambian con el tema: sobre
-          // crema, los valores del modo oscuro dejan las cuerdas invisibles.
-          // Van por `style` y no por atributo: var() solo se resuelve en CSS.
+          // Cuerdas y nudos discretos llevan su alfa dentro del propio token,
+          // que cambia con el tema. Van por `style` y no por atributo: var()
+          // solo se resuelve en CSS, no en atributos de presentación.
           return (
             <g key={c.t}>
               <path
                 d={d(curva)}
-                stroke={
-                  c.destacada
-                    ? "var(--color-primary-soft)"
-                    : "var(--color-foreground)"
-                }
                 style={{
-                  strokeOpacity: c.destacada ? 0.55 : "var(--quipu-trazo)",
+                  stroke: c.destacada
+                    ? "var(--primary-soft)"
+                    : "var(--quipu-cuerda)",
+                  strokeOpacity: c.destacada ? 0.55 : undefined,
                 }}
                 strokeWidth={c.destacada ? 2.4 : 1.8}
                 strokeLinecap="round"
@@ -124,13 +122,11 @@ export function Quipu({ className }: { className?: string }) {
                     cx={nx}
                     cy={ny}
                     r={c.destacada ? 5.5 : 4}
-                    fill={
-                      c.destacada
-                        ? "var(--color-primary-soft)"
-                        : "var(--color-muted)"
-                    }
                     style={{
-                      fillOpacity: c.destacada ? 0.95 : "var(--quipu-nudo)",
+                      fill: c.destacada
+                        ? "var(--primary-soft)"
+                        : "var(--quipu-nudo)",
+                      fillOpacity: c.destacada ? 0.95 : undefined,
                     }}
                   />
                 );
@@ -141,8 +137,7 @@ export function Quipu({ className }: { className?: string }) {
 
         <path
           d={d(CUERDA)}
-          stroke="var(--color-primary-soft)"
-          strokeOpacity="0.7"
+          style={{ stroke: "var(--primary-soft)", strokeOpacity: 0.7 }}
           strokeWidth="3"
           strokeLinecap="round"
         />

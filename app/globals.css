@@ -1,56 +1,48 @@
 @import "tailwindcss";
 
-/* Dos temas, sin interruptor: manda `prefers-color-scheme`, es decir lo que la
-   persona ya eligió en su sistema operativo o navegador.
+/* Dos temas con un solo juego de tokens: `light-dark()` elige según el
+ * `color-scheme` que esté en efecto, así que la paleta se escribe una vez y
+ * no hay bloques duplicados que se desincronicen.
  *
- * El claro es la base y el oscuro va en la consulta de medios porque los
- * navegadores informan «light» cuando no hay preferencia declarada: así el
- * caso por defecto queda definido explícitamente y no por descarte. */
+ * Por defecto manda el sistema (`light dark`). El botón de la cabecera no
+ * reasigna colores: solo fija `color-scheme` en el elemento raíz, y
+ * `light-dark()` hace el resto. */
 :root {
   color-scheme: light dark;
 
   /* Claro: cremas cálidas, sin blanco puro en ninguna capa. El lienzo es el
      tono medio y las tarjetas suben hacia el blanco roto, de forma que un
-     recuadro se separa del fondo por su propia luz y no por una sombra. */
-  --background: #f5f4ef;
-  --card: #fbfaf6;
-  --foreground: #1f1e1d;
-  --foreground-soft: #4a4842;
-  --muted: #6b6a63;
-  --border: #e3e0d6;
+     recuadro se separa del fondo por su propia luz y no por una sombra.
+     Oscuro: los mismos tokens que la app (`Kipu_app/app/globals.css`). */
+  --background: light-dark(#f5f4ef, #1f1e1d);
+  --card: light-dark(#fbfaf6, #262624);
+  --foreground: light-dark(#1f1e1d, #f5f4ef);
+  --foreground-soft: light-dark(#4a4842, #c2c0b6);
+  --muted: light-dark(#6b6a63, #8f8d85);
+  --border: light-dark(#e3e0d6, #383734);
 
   /* El verde azulado de marca (#58bfcb) sobre crema da 2.9:1: vale como
-     adorno y no como texto. Para texto y rellenos se usa la versión honda,
-     que llega a 5.7:1; el brillante se reserva a lo decorativo. */
-  --primary: #0a6b74;
-  --primary-soft: #089fac;
-  --on-primary: #f8f7f3;
+     adorno y no como texto. En claro, lo que lleva texto usa la versión
+     honda, que llega a 5.7:1; el brillante se reserva a lo decorativo. */
+  --primary: light-dark(#0a6b74, #58bfcb);
+  --primary-soft: light-dark(#089fac, #58bfcb);
+  --on-primary: light-dark(#f8f7f3, #1f1e1d);
 
-  /* Opacidades del quipu del hero: sobre crema hay que subirlas o las cuerdas
-     desaparecen. */
-  --quipu-trazo: 0.24;
-  --quipu-nudo: 0.5;
-  --quipu-halo: 0.1;
+  /* Cuerdas y nudos del quipu. Sobre crema hay que subir la opacidad o el
+     dibujo desaparece, de ahí que cada tema lleve su propio alfa. */
+  --quipu-cuerda: light-dark(rgb(31 30 29 / 0.24), rgb(245 244 239 / 0.16));
+  --quipu-nudo: light-dark(rgb(107 106 99 / 0.5), rgb(143 141 133 / 0.45));
+  --quipu-halo: light-dark(rgb(8 159 172 / 0.1), rgb(88 191 203 / 0.14));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Oscuro: los mismos tokens que la app (`Kipu_app/app/globals.css`). */
-    --background: #1f1e1d;
-    --card: #262624;
-    --foreground: #f5f4ef;
-    --foreground-soft: #c2c0b6;
-    --muted: #8f8d85;
-    --border: #383734;
+/* Preferencia explícita: gana al sistema. La escribe el script de `app/layout`
+   antes de pintar, leyendo lo que quedó guardado. */
+:root[data-tema="light"] {
+  color-scheme: light;
+}
 
-    --primary: #58bfcb;
-    --primary-soft: #58bfcb;
-    --on-primary: #1f1e1d;
-
-    --quipu-trazo: 0.16;
-    --quipu-nudo: 0.45;
-    --quipu-halo: 0.14;
-  }
+:root[data-tema="dark"] {
+  color-scheme: dark;
 }
 
 @theme inline {

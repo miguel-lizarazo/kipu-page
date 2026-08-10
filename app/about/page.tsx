@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { EnConstruccion } from "@/components/ui/en-construccion";
-import { enConstruccion, sitio } from "@/content/site";
+import { DICCIONARIOS, RUTAS, sitio } from "@/content/site";
+import { IDIOMA_POR_DEFECTO } from "@/lib/i18n/idiomas";
+
+// Los metadatos se generan en build, cuando todavía no hay navegador al que
+// preguntarle el idioma: van siempre en el de por defecto.
+const porDefecto = DICCIONARIOS[IDIOMA_POR_DEFECTO].enConstruccion.about;
 
 export const metadata: Metadata = {
-  title: `About · ${sitio.nombre}`,
-  description: enConstruccion.about.texto,
+  title: `${porDefecto.titulo} · ${sitio.nombre}`,
+  description: porDefecto.texto,
 };
 
 export default function About() {
   return (
     <>
-      <SiteHeader activa="/about/" />
+      <SiteHeader activa={RUTAS.about} />
       <main>
-        <EnConstruccion
-          titulo={enConstruccion.about.titulo}
-          texto={enConstruccion.about.texto}
-        />
+        <EnConstruccion seccion="about" />
       </main>
     </>
   );
