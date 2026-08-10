@@ -1,32 +1,68 @@
 @import "tailwindcss";
 
-/* Los tokens son los mismos que los de la app (`Kipu_app/app/globals.css`).
-   Si cambian allí, cambian aquí: la página y el producto tienen que leerse
-   como la misma marca. Lo que se añade abajo es solo lo que una landing
-   necesita y una aplicación no. */
+/* Dos temas, sin interruptor: manda `prefers-color-scheme`, es decir lo que la
+   persona ya eligió en su sistema operativo o navegador.
+ *
+ * El claro es la base y el oscuro va en la consulta de medios porque los
+ * navegadores informan «light» cuando no hay preferencia declarada: así el
+ * caso por defecto queda definido explícitamente y no por descarte. */
 :root {
-  --background: #1f1e1d;
-  --foreground: #f5f4ef;
-  --muted: #8f8d85;
-  --card: #262624;
-  --border: #383734;
-  --primary: #58bfcb;
+  color-scheme: light dark;
 
-  /* Verde azulado más profundo, el del texto de bienvenida de la app. Sirve
-     para rellenos grandes, donde --primary a pantalla completa deslumbra. */
-  --primary-deep: #089fac;
-  --foreground-soft: #c2c0b6;
+  /* Claro: cremas cálidas, sin blanco puro en ninguna capa. El lienzo es el
+     tono medio y las tarjetas suben hacia el blanco roto, de forma que un
+     recuadro se separa del fondo por su propia luz y no por una sombra. */
+  --background: #f5f4ef;
+  --card: #fbfaf6;
+  --foreground: #1f1e1d;
+  --foreground-soft: #4a4842;
+  --muted: #6b6a63;
+  --border: #e3e0d6;
+
+  /* El verde azulado de marca (#58bfcb) sobre crema da 2.9:1: vale como
+     adorno y no como texto. Para texto y rellenos se usa la versión honda,
+     que llega a 5.7:1; el brillante se reserva a lo decorativo. */
+  --primary: #0a6b74;
+  --primary-soft: #089fac;
+  --on-primary: #f8f7f3;
+
+  /* Opacidades del quipu del hero: sobre crema hay que subirlas o las cuerdas
+     desaparecen. */
+  --quipu-trazo: 0.24;
+  --quipu-nudo: 0.5;
+  --quipu-halo: 0.1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Oscuro: los mismos tokens que la app (`Kipu_app/app/globals.css`). */
+    --background: #1f1e1d;
+    --card: #262624;
+    --foreground: #f5f4ef;
+    --foreground-soft: #c2c0b6;
+    --muted: #8f8d85;
+    --border: #383734;
+
+    --primary: #58bfcb;
+    --primary-soft: #58bfcb;
+    --on-primary: #1f1e1d;
+
+    --quipu-trazo: 0.16;
+    --quipu-nudo: 0.45;
+    --quipu-halo: 0.14;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-foreground-soft: var(--foreground-soft);
   --color-muted: var(--muted);
-  --color-card: var(--card);
   --color-border: var(--border);
   --color-primary: var(--primary);
-  --color-primary-deep: var(--primary-deep);
+  --color-primary-soft: var(--primary-soft);
+  --color-on-primary: var(--on-primary);
 
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
@@ -34,10 +70,6 @@
 @layer base {
   * {
     border-color: var(--border);
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 
   body {
@@ -57,10 +89,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

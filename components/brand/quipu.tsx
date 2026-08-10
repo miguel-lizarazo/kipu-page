@@ -98,17 +98,21 @@ export function Quipu({ className }: { className?: string }) {
       <g mask="url(#kipu-mascara)">
         {COLGANTES.map((c) => {
           const curva = colgante(enCubica(CUERDA, c.t), c.largo, c.deriva);
-          const trazo = c.destacada
-            ? "var(--color-primary)"
-            : "var(--color-foreground)";
-          const opacidad = c.destacada ? 0.5 : 0.16;
-
+          // Las opacidades son variables CSS porque cambian con el tema: sobre
+          // crema, los valores del modo oscuro dejan las cuerdas invisibles.
+          // Van por `style` y no por atributo: var() solo se resuelve en CSS.
           return (
             <g key={c.t}>
               <path
                 d={d(curva)}
-                stroke={trazo}
-                strokeOpacity={opacidad}
+                stroke={
+                  c.destacada
+                    ? "var(--color-primary-soft)"
+                    : "var(--color-foreground)"
+                }
+                style={{
+                  strokeOpacity: c.destacada ? 0.55 : "var(--quipu-trazo)",
+                }}
                 strokeWidth={c.destacada ? 2.4 : 1.8}
                 strokeLinecap="round"
               />
@@ -121,9 +125,13 @@ export function Quipu({ className }: { className?: string }) {
                     cy={ny}
                     r={c.destacada ? 5.5 : 4}
                     fill={
-                      c.destacada ? "var(--color-primary)" : "var(--color-muted)"
+                      c.destacada
+                        ? "var(--color-primary-soft)"
+                        : "var(--color-muted)"
                     }
-                    fillOpacity={c.destacada ? 0.95 : 0.45}
+                    style={{
+                      fillOpacity: c.destacada ? 0.95 : "var(--quipu-nudo)",
+                    }}
                   />
                 );
               })}
@@ -133,8 +141,8 @@ export function Quipu({ className }: { className?: string }) {
 
         <path
           d={d(CUERDA)}
-          stroke="var(--color-primary)"
-          strokeOpacity="0.65"
+          stroke="var(--color-primary-soft)"
+          strokeOpacity="0.7"
           strokeWidth="3"
           strokeLinecap="round"
         />
