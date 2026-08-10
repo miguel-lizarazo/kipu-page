@@ -42,7 +42,9 @@ export function KipuLogo({
         style={{ width: tamano, height: tamano }}
       />
       {conNombre ? (
-        <span className="text-lg font-semibold tracking-tight text-foreground">
+        // En móvil no cabe junto a la navegación centrada y los controles; el
+        // símbolo solo sigue identificando la marca, y el nombre está en el h1.
+        <span className="hidden text-lg font-semibold tracking-tight text-foreground sm:inline">
           Kipu
         </span>
       ) : null}
