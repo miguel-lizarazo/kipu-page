@@ -30,9 +30,6 @@ export type Diccionario = {
   nav: { about: string; resources: string };
   hero: { eyebrow: string; titulo: string; entradilla: string };
   inicio: {
-    // Los dos títulos van en inglés en los tres idiomas, por decisión de
-    // marca. Están igual en los tres diccionarios para que traducirlos, si
-    // algún día se quiere, sea editar aquí y nada más.
     releases: { titulo: string; texto: string };
     colaborar: { titulo: string; texto: string };
   };
@@ -72,11 +69,11 @@ const es: Diccionario = {
 
   inicio: {
     releases: {
-      titulo: "Latest releases",
+      titulo: "Últimas versiones",
       texto: "Aquí irá cada versión publicada, con su fecha y sus notas.",
     },
     colaborar: {
-      titulo: "Building? Let's collaborate",
+      titulo: "¿Construyendo? Colaboremos",
       texto:
         "Aquí irán las formas de sumarse: qué hace falta y por dónde entrar.",
     },
@@ -97,8 +94,7 @@ const es: Diccionario = {
   },
 
   pie: {
-    // Igual que los títulos de inicio: en inglés en los tres idiomas.
-    lema: "Open Govtech for Latin America and the Caribbean",
+    lema: "Govtech abierto para América Latina y el Caribe",
     company: "Empresa",
     contacto: "Contacto",
     derechos: "© 2026 Kipu Technologies",
@@ -182,11 +178,11 @@ const pt: Diccionario = {
 
   inicio: {
     releases: {
-      titulo: "Latest releases",
+      titulo: "Últimas versões",
       texto: "Aqui virá cada versão publicada, com sua data e suas notas.",
     },
     colaborar: {
-      titulo: "Building? Let's collaborate",
+      titulo: "Está construindo? Vamos colaborar",
       texto:
         "Aqui virão as formas de participar: o que falta e por onde começar.",
     },
@@ -207,7 +203,7 @@ const pt: Diccionario = {
   },
 
   pie: {
-    lema: "Open Govtech for Latin America and the Caribbean",
+    lema: "Govtech aberto para a América Latina e o Caribe",
     company: "Empresa",
     contacto: "Contato",
     derechos: "© 2026 Kipu Technologies",
