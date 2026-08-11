@@ -14,7 +14,9 @@ import { sitio } from "@/content/site";
  * línea de arriba remata esa separación, y sobra en claro —donde el corte de
  * crema a negro ya es evidente—, así que ahí va transparente.
  *
- * Los iconos y «Contacto» todavía no llevan enlace: falta a dónde apuntar.
+ * Los dos iconos y «Contacto» apuntan a los destinos de `sitio`. El de
+ * LinkedIn sale del sitio, así que abre en otra pestaña; el correo no, porque
+ * `mailto:` lo atiende el cliente de correo y una pestaña en blanco sobra.
  */
 export function SiteFooter() {
   const t = useT();
@@ -46,7 +48,14 @@ export function SiteFooter() {
 
           <div className="sm:text-right">
             <p className="font-semibold">{t.pie.company}</p>
-            <p className="mt-4 text-[#c2c0b6]">{t.pie.contacto}</p>
+            <p className="mt-4">
+              <a
+                href={`mailto:${sitio.correo}`}
+                className="text-[#c2c0b6] underline-offset-4 transition-colors hover:text-[#f5f4ef] hover:underline"
+              >
+                {t.pie.contacto}
+              </a>
+            </p>
           </div>
         </div>
 
@@ -56,12 +65,22 @@ export function SiteFooter() {
           <p className="text-sm text-[#c2c0b6]">{t.pie.derechos}</p>
 
           <div className="flex items-center gap-5 text-[#c2c0b6]">
-            <span role="img" aria-label={t.pie.linkedin}>
+            <a
+              href={sitio.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={t.pie.linkedin}
+              className="transition-colors hover:text-[#f5f4ef]"
+            >
               <IconoLinkedin />
-            </span>
-            <span role="img" aria-label={t.pie.correo}>
+            </a>
+            <a
+              href={`mailto:${sitio.correo}`}
+              aria-label={`${t.pie.correo}: ${sitio.correo}`}
+              className="transition-colors hover:text-[#f5f4ef]"
+            >
               <IconoCorreo />
-            </span>
+            </a>
           </div>
         </div>
       </div>

@@ -14,6 +14,11 @@ export const sitio = {
   tagline: "Recursos abiertos para la gestión pública",
   descripcion:
     "Kipu reúne herramientas de govtech open source pensadas para equipos de gobierno.",
+
+  // Destinos del pie. No se traducen, así que viven aquí y no en los
+  // diccionarios.
+  correo: "contact@kiputech.org",
+  linkedin: "https://www.linkedin.com/company/kiputech",
 } as const;
 
 /* Las rutas no se traducen: una URL que cambia con el idioma se rompe al
