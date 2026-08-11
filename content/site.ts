@@ -64,7 +64,7 @@ const es: Diccionario = {
   hero: {
     titulo: "Govtech abierto para América Latina y el Caribe",
     entradilla:
-      "Un kipu registraba, en cuerdas anudadas, lo que un Estado necesitaba recordar. Este también: instrumentos abiertos para que los equipos de gobierno sigan sus planes, midan sus avances y conserven sus datos.",
+      "Apoyados en tecnologías de frontera, producimos y entregamos valor público para gobiernos nacionales y locales en la región.",
   },
 
   inicio: {
@@ -117,7 +117,7 @@ const en: Diccionario = {
   hero: {
     titulo: "Open Govtech for Latin America and the Caribbean",
     entradilla:
-      "A quipu recorded, in knotted cords, what a state needed to remember. So does this one: open instruments for government teams to follow their plans, measure their progress and keep their own data.",
+      "Building on frontier technologies, we produce and deliver public value for national and local governments across the region.",
   },
 
   inicio: {
@@ -169,7 +169,7 @@ const pt: Diccionario = {
   hero: {
     titulo: "Govtech aberto para a América Latina e o Caribe",
     entradilla:
-      "Um quipu registrava, em cordas com nós, o que um Estado precisava lembrar. Este também: instrumentos abertos para que as equipes de governo acompanhem seus planos, meçam seus avanços e guardem seus próprios dados.",
+      "Apoiados em tecnologias de fronteira, produzimos e entregamos valor público para governos nacionais e locais da região.",
   },
 
   inicio: {
