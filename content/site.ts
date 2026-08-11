@@ -34,6 +34,7 @@ export type Diccionario = {
   inicio: {
     releases: { titulo: string; texto: string };
     colaborar: { titulo: string; texto: string };
+    postular: { titulo: string; texto: string };
   };
   enConstruccion: {
     etiqueta: string;
@@ -76,6 +77,11 @@ const es: Diccionario = {
       titulo: "¿Construyendo? Colaboremos",
       texto:
         "Aquí irán las formas de sumarse: qué hace falta y por dónde entrar.",
+    },
+    postular: {
+      titulo: "Postula proyectos",
+      texto:
+        "Aquí irá la convocatoria: qué proyectos buscamos y cómo presentarlos.",
     },
   },
 
@@ -129,6 +135,11 @@ const en: Diccionario = {
       titulo: "Building? Let's collaborate",
       texto: "The ways to join in will land here: what is needed and where to start.",
     },
+    postular: {
+      titulo: "Submit projects",
+      texto:
+        "The call will land here: what projects we are looking for and how to submit them.",
+    },
   },
 
   enConstruccion: {
@@ -181,6 +192,11 @@ const pt: Diccionario = {
       titulo: "Está construindo? Vamos colaborar",
       texto:
         "Aqui virão as formas de participar: o que falta e por onde começar.",
+    },
+    postular: {
+      titulo: "Proponha projetos",
+      texto:
+        "Aqui virá a chamada: que projetos buscamos e como apresentá-los.",
     },
   },
 

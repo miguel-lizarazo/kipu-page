@@ -3,11 +3,11 @@
 import { useT } from "@/components/i18n/language-provider";
 import { PanelEnObras } from "@/components/ui/panel-en-obras";
 
-/** Las dos secciones que siguen al hero: novedades y colaboración. */
+/** Las secciones que siguen al hero: novedades, colaboración y convocatoria. */
 export function BloquesInicio() {
   const t = useT();
 
-  const bloques = [t.inicio.releases, t.inicio.colaborar];
+  const bloques = [t.inicio.releases, t.inicio.colaborar, t.inicio.postular];
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-28 sm:px-8 sm:pb-36">
