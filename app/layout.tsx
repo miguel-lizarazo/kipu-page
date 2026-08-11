@@ -6,15 +6,15 @@ import { sitio } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${sitio.nombre} · ${sitio.tagline}`,
-  applicationName: sitio.nombre,
+  title: sitio.nombreCompleto,
+  applicationName: sitio.nombreCompleto,
   description: sitio.descripcion,
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: `${sitio.nombre} · ${sitio.tagline}`,
+    title: sitio.nombreCompleto,
     description: sitio.descripcion,
     type: "website",
     locale: IDIOMA_POR_DEFECTO,

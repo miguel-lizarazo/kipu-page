@@ -8,7 +8,7 @@ import { IDIOMA_POR_DEFECTO } from "@/lib/i18n/idiomas";
 const porDefecto = DICCIONARIOS[IDIOMA_POR_DEFECTO].enConstruccion.resources;
 
 export const metadata: Metadata = {
-  title: `${porDefecto.titulo} · ${sitio.nombre}`,
+  title: `${porDefecto.titulo} · ${sitio.nombreCompleto}`,
   description: porDefecto.texto,
 };
 

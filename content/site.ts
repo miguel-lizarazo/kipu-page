@@ -9,6 +9,8 @@ import type { Idioma } from "@/lib/i18n/idiomas";
 /** Invariable: no se traduce y lo usan los metadatos, que se generan en build. */
 export const sitio = {
   nombre: "Kipu",
+  // El que sale en la pestaña del navegador y en las tarjetas al compartir.
+  nombreCompleto: "Kipu Technologies",
   tagline: "Recursos abiertos para la gestión pública",
   descripcion:
     "Kipu reúne herramientas de govtech open source pensadas para equipos de gobierno.",
