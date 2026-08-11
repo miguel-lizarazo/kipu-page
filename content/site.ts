@@ -41,7 +41,6 @@ export type Diccionario = {
     resources: { titulo: string; texto: string };
   };
   pie: {
-    lema: string;
     company: string;
     contacto: string;
     derechos: string;
@@ -95,7 +94,6 @@ const es: Diccionario = {
   },
 
   pie: {
-    lema: "Govtech abierto para América Latina y el Caribe",
     company: "Empresa",
     contacto: "Contacto",
     derechos: "© 2026 Kipu Technologies",
@@ -148,7 +146,6 @@ const en: Diccionario = {
   },
 
   pie: {
-    lema: "Open Govtech for Latin America and the Caribbean",
     company: "Company",
     contacto: "Contact",
     derechos: "© 2026 Kipu Technologies",
@@ -202,7 +199,6 @@ const pt: Diccionario = {
   },
 
   pie: {
-    lema: "Govtech aberto para a América Latina e o Caribe",
     company: "Empresa",
     contacto: "Contato",
     derechos: "© 2026 Kipu Technologies",

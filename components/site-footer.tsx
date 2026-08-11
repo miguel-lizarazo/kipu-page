@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useT } from "@/components/i18n/language-provider";
+import { sitio } from "@/content/site";
 
 /**
  * El pie va siempre oscuro, también con el tema claro: cierra la página con un
@@ -28,13 +29,19 @@ export function SiteFooter() {
           <div className="flex items-center gap-4">
             <Image
               src="/kipu-logo-full.jpg"
-              alt="Kipu"
+              alt=""
               width={48}
               height={48}
               className="rounded-xl"
               style={{ width: 48, height: 48 }}
             />
-            <p className="max-w-xs text-pretty leading-relaxed">{t.pie.lema}</p>
+            {/* Dos tercios del ancho del logo: 48px × 2/3 = 32px. Se escribe
+                atado a esa cuenta para que, si el logo cambia de tamaño, se
+                vea de dónde sale el número. `leading-none` alinea la caja del
+                texto con el cuadrado en vez de dejarlo flotando alto. */}
+            <p className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight sm:text-[calc(48px*2/3)]">
+              {sitio.nombreCompleto}
+            </p>
           </div>
 
           <div className="sm:text-right">
