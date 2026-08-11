@@ -30,7 +30,7 @@ export type Diccionario = {
   temaAClaro: string;
   temaAOscuro: string;
   nav: { about: string; resources: string };
-  hero: { eyebrow: string; titulo: string; entradilla: string };
+  hero: { titulo: string; entradilla: string };
   inicio: {
     releases: { titulo: string; texto: string };
     colaborar: { titulo: string; texto: string };
@@ -63,7 +63,6 @@ const es: Diccionario = {
   },
 
   hero: {
-    eyebrow: "Govtech · Código abierto",
     titulo: "Herramientas públicas para la gestión pública",
     entradilla:
       "Un kipu registraba, en cuerdas anudadas, lo que un Estado necesitaba recordar. Este también: instrumentos abiertos para que los equipos de gobierno sigan sus planes, midan sus avances y conserven sus datos.",
@@ -71,7 +70,7 @@ const es: Diccionario = {
 
   inicio: {
     releases: {
-      titulo: "Últimas versiones",
+      titulo: "Últimos lanzamientos",
       texto: "Aquí irá cada versión publicada, con su fecha y sus notas.",
     },
     colaborar: {
@@ -118,7 +117,6 @@ const en: Diccionario = {
   },
 
   hero: {
-    eyebrow: "Govtech · Open source",
     titulo: "Public tools for public work",
     entradilla:
       "A quipu recorded, in knotted cords, what a state needed to remember. So does this one: open instruments for government teams to follow their plans, measure their progress and keep their own data.",
@@ -172,7 +170,6 @@ const pt: Diccionario = {
   },
 
   hero: {
-    eyebrow: "Govtech · Código aberto",
     titulo: "Ferramentas públicas para a gestão pública",
     entradilla:
       "Um quipu registrava, em cordas com nós, o que um Estado precisava lembrar. Este também: instrumentos abertos para que as equipes de governo acompanhem seus planos, meçam seus avanços e guardem seus próprios dados.",
@@ -180,7 +177,7 @@ const pt: Diccionario = {
 
   inicio: {
     releases: {
-      titulo: "Últimas versões",
+      titulo: "Últimos lançamentos",
       texto: "Aqui virá cada versão publicada, com sua data e suas notas.",
     },
     colaborar: {
